@@ -1,3 +1,4 @@
+import Navigation from "@/components/navigation";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import Link from "next/link";
 
@@ -10,14 +11,17 @@ export default function Home() {
   return (
     <main className="p-12">
       {user ? (
-        <div className="text-center">
-          <p>Logged in</p>
-          <Link href="/api/auth/logout">Logout</Link>
-        </div>
+        <>
+          <Navigation />
+          <div className="text-center">
+            <p>Eingeloggt</p>
+            <Link href="/api/auth/logout">Ausloggen</Link>
+          </div>
+        </>
       ) : (
         <div className="text-center">
-          <p>Not logged in</p>
-          <Link href="/api/auth/login">Login</Link>
+          <p>Nicht eingeloggt</p>
+          <Link href="/api/auth/login">Einloggen</Link>
         </div>
       )}
     </main>
