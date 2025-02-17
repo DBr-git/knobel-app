@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+*.xlsm
 
 # debug
 npm-debug.log*
